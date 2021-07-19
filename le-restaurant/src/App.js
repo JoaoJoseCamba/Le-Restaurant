@@ -1,15 +1,18 @@
 import React from 'react';
-import Navbar from './Components/Navbar'
+import { BrowserRouter as Router } from 'react-router-dom';
+import { GlobalStyles } from './globalStyles';
+import Hero from './Components/Hero'; 
 
 
 function App() {
   return (
-    <div className="App">
-      <Navbar />
-    </div>
+    <Router>
+      <GlobalStyles />
+      <Hero />
+    </Router>
   );
 }
 
 export default App;
 
-//Here we are creating styled components. 
+//Here we are using some of our style components. 

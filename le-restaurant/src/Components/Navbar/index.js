@@ -1,13 +1,16 @@
 import React from 'react'
+import { Nav, NavLink } from './NavBar-Elements'
 
-const Navbar = () => {
+const NavBar = () => {
     return (
-        <div>
-            <h1>Navbar</h1>
-        </div>
+        <>
+            <Nav>
+                <NavLink to="/">Restaurant</NavLink>
+            </Nav>
+        </>
     )
 }
 
-export default Navbar
+export default NavBar
 
-//Here we are creating styled components. 
+ 
