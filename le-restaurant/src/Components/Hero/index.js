@@ -1,24 +1,35 @@
-import React from 'react'
+import React, { useState } from 'react';
 import Navbar from '../Navbar';
-import {HeroContainer, 
-        HeroContent, 
-        HeroItems, HeroH1, 
-        HeroP, 
-        HeroBtn} from './heroElements'
+import Sidebar from '../Sidebar';
+import {
+  HeroContainer,
+  HeroContent,
+  HeroItems,
+  HeroH1,
+  HeroP,
+  HeroBtn
+} from './HeroElements';
 
 const Hero = () => {
-    return (
-        <HeroContainer>
-            <Navbar />
-            <HeroContent>
-                <HeroItems>
-                    <HeroH1>Best Food Ever!</HeroH1>
-                    <HeroP>Food Prepared in under 15 Minutes!</HeroP>
-                    <HeroBtn>Place Order</HeroBtn>
-                </HeroItems>
-            </HeroContent>
-        </HeroContainer>
-    )
-}
+  const [isOpen, setIsOpen] = useState(false);
 
-export default Hero
+  const toggle = () => {
+    setIsOpen(!isOpen);
+  };
+
+  return (
+    <HeroContainer>
+      <Navbar toggle={toggle} />
+      <Sidebar isOpen={isOpen} toggle={toggle} />
+      <HeroContent>
+        <HeroItems>
+          <HeroH1>Le Restaurant</HeroH1>
+          <HeroP>Prepared In Under 15 Minutes</HeroP>
+          <HeroBtn>Place Order</HeroBtn>
+        </HeroItems>
+      </HeroContent>
+    </HeroContainer>
+  );
+};
+
+export default Hero;
